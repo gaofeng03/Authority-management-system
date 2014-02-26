@@ -9,7 +9,7 @@
 <jsp:include page="inc.jsp"></jsp:include>
 <script type="text/javascript">
 	$(function() {
-		$.post(sy.contextPath + '/init!doNotNeedSessionAndSecurity_initDb.sy', function(result) {
+		$.post(sy.contextPath + '/init!doNotNeedSessionAndSecurity_initDb.do', function(result) {
 			if (result.success) {
 				window.location.replace(sy.contextPath + '/index.jsp');
 			}

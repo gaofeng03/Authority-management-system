@@ -20,7 +20,7 @@
 		for (var i = 0; i < nodes.length; i++) {
 			ids.push(nodes[i].id);
 		}
-		$.post(sy.contextPath + '/base/syuser!grantRole.sy', {
+		$.post(sy.contextPath + '/base/syuser!grantRole.do', {
 			id : $(':input[name="data.id"]').val(),
 			ids : ids.join(',')
 		}, function(result) {
@@ -37,14 +37,14 @@
 			text : '数据加载中....'
 		});
 		$('#tree').tree({
-			url : sy.contextPath + '/base/syrole!doNotNeedSecurity_getRolesTree.sy',
+			url : sy.contextPath + '/base/syrole!doNotNeedSecurity_getRolesTree.do',
 			parentField : 'pid',
 			checkbox : true,
 			formatter : function(node) {
 				return node.name;
 			},
 			onLoadSuccess : function(node, data) {
-				$.post(sy.contextPath + '/base/syrole!doNotNeedSecurity_getRoleByUserId.sy', {
+				$.post(sy.contextPath + '/base/syrole!doNotNeedSecurity_getRoleByUserId.do', {
 					id : $(':input[name="data.id"]').val()
 				}, function(result) {
 					if (result) {

@@ -12,7 +12,7 @@
 		var regFun = function() {
 			if ($('form').form('validate')) {
 				$('#regBtn').linkbutton('disable');
-				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_reg.sy', $('form').serialize(), function(result) {
+				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_reg.do', $('form').serialize(), function(result) {
 					if (result.success) {
 						location.replace(sy.contextPath + '/index.jsp');
 					} else {

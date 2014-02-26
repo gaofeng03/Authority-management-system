@@ -15,7 +15,7 @@
 			var $form = loginTabs.find('form');//选中的tab里面的form
 			if ($form.length == 1 && $form.form('validate')) {
 				$('#loginBtn').linkbutton('disable');
-				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_login.sy', $form.serialize(), function(result) {
+				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_login.do', $form.serialize(), function(result) {
 					if (result.success) {
 						location.replace(sy.contextPath + '/index.jsp');
 					} else {
@@ -54,7 +54,7 @@
 		});
 
 		$('#userLoginCombobox').combobox({
-			url : sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_loginNameComboBox.sy',
+			url : sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_loginNameComboBox.do',
 			valueField : 'loginname',
 			textField : 'loginname',
 			required : true,
@@ -64,7 +64,7 @@
 		});
 
 		$('#userLoginCombogrid').combogrid({
-			url : sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_loginNameComboGrid.sy',
+			url : sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_loginNameComboGrid.do',
 			panelWidth : 500,
 			panelHeight : 200,
 			idField : 'loginname',

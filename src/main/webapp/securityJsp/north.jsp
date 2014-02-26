@@ -6,12 +6,12 @@
 %>
 <script type="text/javascript" charset="utf-8">
 	var lockWindowFun = function() {
-		$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_logout.sy', function(result) {
+		$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_logout.do', function(result) {
 			$('#loginDialog').dialog('open');
 		}, 'json');
 	};
 	var logoutFun = function() {
-		$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_logout.sy', function(result) {
+		$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_logout.do', function(result) {
 			location.replace(sy.contextPath + '/index.jsp');
 		}, 'json');
 	};

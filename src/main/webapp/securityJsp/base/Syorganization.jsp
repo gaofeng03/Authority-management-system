@@ -44,7 +44,7 @@
 	var removeFun = function(id) {
 		parent.$.messager.confirm('询问', '您确定要删除此记录？', function(r) {
 			if (r) {
-				$.post(sy.contextPath + '/base/syorganization!delete.sy', {
+				$.post(sy.contextPath + '/base/syorganization!delete.do', {
 					id : id
 				}, function() {
 					grid.treegrid('reload');
@@ -83,7 +83,7 @@
 	$(function() {
 		grid = $('#grid').treegrid({
 			title : '',
-			url : sy.contextPath + '/base/syorganization!treeGrid.sy',
+			url : sy.contextPath + '/base/syorganization!treeGrid.do',
 			idField : 'id',
 			treeField : 'name',
 			parentField : 'pid',

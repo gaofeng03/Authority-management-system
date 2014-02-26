@@ -18,9 +18,9 @@
 		if ($('form').form('validate')) {
 			var url;
 			if ($(':input[name="data.id"]').val().length > 0) {
-				url = sy.contextPath + '/base/syorganization!update.sy';
+				url = sy.contextPath + '/base/syorganization!update.do';
 			} else {
-				url = sy.contextPath + '/base/syorganization!save.sy';
+				url = sy.contextPath + '/base/syorganization!save.do';
 			}
 			$.post(url, sy.serializeObject($('form')), function(result) {
 				if (result.success) {
@@ -49,7 +49,7 @@
 			parent.$.messager.progress({
 				text : '数据加载中....'
 			});
-			$.post(sy.contextPath + '/base/syorganization!getById.sy', {
+			$.post(sy.contextPath + '/base/syorganization!getById.do', {
 				id : $(':input[name="data.id"]').val()
 			}, function(result) {
 				if (result.id != undefined) {
@@ -89,7 +89,7 @@
 				</tr>
 				<tr>
 					<th>上级机构</th>
-					<td><select id="syorganization_id" name="data.syorganization.id" class="easyui-combotree" data-options="editable:false,idField:'id',textField:'name',parentField:'pid',url:'<%=contextPath%>/base/syorganization!doNotNeedSecurity_comboTree.sy'" style="width: 155px;"></select><img class="iconImg ext-icon-cross" onclick="$('#syorganization_id').combotree('clear');" title="清空" /></td>
+					<td><select id="syorganization_id" name="data.syorganization.id" class="easyui-combotree" data-options="editable:false,idField:'id',textField:'name',parentField:'pid',url:'<%=contextPath%>/base/syorganization!doNotNeedSecurity_comboTree.do'" style="width: 155px;"></select><img class="iconImg ext-icon-cross" onclick="$('#syorganization_id').combotree('clear');" title="清空" /></td>
 					<th>机构图标</th>
 					<td><input id="iconCls" name="data.iconCls" readonly="readonly" style="padding-left: 18px; width: 134px;" /><img class="iconImg ext-icon-zoom" onclick="showIcons();" title="浏览图标" />&nbsp;<img class="iconImg ext-icon-cross" onclick="$('#iconCls').val('');$('#iconCls').attr('class','');" title="清空" /></td>
 				</tr>

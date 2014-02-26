@@ -18,7 +18,7 @@
 		var loginFun = function() {
 			if ($('#loginDialog form').form('validate')) {
 				$('#loginBtn').linkbutton('disable');
-				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_login.sy', $('#loginDialog form').serialize(), function(result) {
+				$.post(sy.contextPath + '/base/syuser!doNotNeedSessionAndSecurity_login.do', $('#loginDialog form').serialize(), function(result) {
 					if (result.success) {
 						$('#loginDialog').dialog('close');
 					} else {
@@ -59,7 +59,7 @@
 				text : '修改',
 				handler : function() {
 					if ($('#passwordDialog form').form('validate')) {
-						$.post(sy.contextPath + '/base/syuser!doNotNeedSecurity_updateCurrentPwd.sy', {
+						$.post(sy.contextPath + '/base/syuser!doNotNeedSecurity_updateCurrentPwd.do', {
 							'data.pwd' : $('#pwd').val()
 						}, function(result) {
 							if (result.success) {
@@ -76,7 +76,7 @@
 		}).dialog('close');
 
 		mainMenu = $('#mainMenu').tree({
-			url : sy.contextPath + '/base/syresource!doNotNeedSecurity_getMainMenu.sy',
+			url : sy.contextPath + '/base/syresource!doNotNeedSecurity_getMainMenu.do',
 			parentField : 'pid',
 			onClick : function(node) {
 				if (node.attributes.url) {

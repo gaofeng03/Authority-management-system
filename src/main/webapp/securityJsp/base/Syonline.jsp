@@ -14,7 +14,7 @@
 	$(function() {
 		grid = $('#grid').datagrid({
 			title : '',
-			url : sy.contextPath + '/base/syonline!grid.sy',
+			url : sy.contextPath + '/base/syonline!grid.do',
 			striped : true,
 			rownumbers : true,
 			pagination : true,

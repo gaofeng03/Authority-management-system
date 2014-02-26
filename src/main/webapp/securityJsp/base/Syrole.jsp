@@ -44,7 +44,7 @@
 	var removeFun = function(id) {
 		parent.$.messager.confirm('询问', '您确定要删除此记录？', function(r) {
 			if (r) {
-				$.post(sy.contextPath + '/base/syrole!delete.sy', {
+				$.post(sy.contextPath + '/base/syrole!delete.do', {
 					id : id
 				}, function() {
 					grid.datagrid('reload');
@@ -67,7 +67,7 @@
 	$(function() {
 		grid = $('#grid').datagrid({
 			title : '',
-			url : sy.contextPath + '/base/syrole!grid.sy',
+			url : sy.contextPath + '/base/syrole!grid.do',
 			striped : true,
 			rownumbers : true,
 			pagination : true,

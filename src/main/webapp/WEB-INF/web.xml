@@ -49,7 +49,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>openSessionInView</filter-name>
-		<url-pattern>*.sy</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 
 	<!-- Struts2配置 -->
@@ -59,7 +59,7 @@
 	</filter>
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
-		<url-pattern>*.sy</url-pattern>
+		<url-pattern>*.do</url-pattern>
 	</filter-mapping>
 
 	<!-- 字符集编码配置 -->

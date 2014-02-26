@@ -20,7 +20,7 @@
 		for (var i = 0; i < nodes.length; i++) {
 			ids.push(nodes[i].id);
 		}
-		$.post(sy.contextPath + '/base/syuser!grantOrganization.sy', {
+		$.post(sy.contextPath + '/base/syuser!grantOrganization.do', {
 			id : $(':input[name="data.id"]').val(),
 			ids : ids.join(',')
 		}, function(result) {
@@ -37,7 +37,7 @@
 			text : '数据加载中....'
 		});
 		$('#tree').tree({
-			url : sy.contextPath + '/base/syorganization!doNotNeedSecurity_getSyorganizationsTree.sy',
+			url : sy.contextPath + '/base/syorganization!doNotNeedSecurity_getSyorganizationsTree.do',
 			parentField : 'pid',
 			checkbox : true,
 			cascadeCheck : false,
@@ -45,7 +45,7 @@
 				return node.name;
 			},
 			onLoadSuccess : function(node, data) {
-				$.post(sy.contextPath + '/base/syorganization!doNotNeedSecurity_getSyorganizationByUserId.sy', {
+				$.post(sy.contextPath + '/base/syorganization!doNotNeedSecurity_getSyorganizationByUserId.do', {
 					id : $(':input[name="data.id"]').val()
 				}, function(result) {
 					if (result) {

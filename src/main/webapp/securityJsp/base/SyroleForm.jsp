@@ -18,9 +18,9 @@
 		if ($('form').form('validate')) {
 			var url;
 			if ($(':input[name="data.id"]').val().length > 0) {
-				url = sy.contextPath + '/base/syrole!update.sy';
+				url = sy.contextPath + '/base/syrole!update.do';
 			} else {
-				url = sy.contextPath + '/base/syrole!save.sy';
+				url = sy.contextPath + '/base/syrole!save.do';
 			}
 			$.post(url, sy.serializeObject($('form')), function(result) {
 				if (result.success) {
@@ -37,7 +37,7 @@
 			parent.$.messager.progress({
 				text : '数据加载中....'
 			});
-			$.post(sy.contextPath + '/base/syrole!getById.sy', {
+			$.post(sy.contextPath + '/base/syrole!getById.do', {
 				id : $(':input[name="data.id"]').val()
 			}, function(result) {
 				if (result.id != undefined) {

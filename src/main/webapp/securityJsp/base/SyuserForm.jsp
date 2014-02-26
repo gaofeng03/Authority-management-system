@@ -18,9 +18,9 @@
 	var submitNow = function($dialog, $grid, $pjq) {
 		var url;
 		if ($(':input[name="data.id"]').val().length > 0) {
-			url = sy.contextPath + '/base/syuser!update.sy';
+			url = sy.contextPath + '/base/syuser!update.do';
 		} else {
-			url = sy.contextPath + '/base/syuser!save.sy';
+			url = sy.contextPath + '/base/syuser!save.do';
 		}
 		$.post(url, sy.serializeObject($('form')), function(result) {
 			parent.sy.progressBar('close');//关闭上传进度条
@@ -54,7 +54,7 @@
 			parent.$.messager.progress({
 				text : '数据加载中....'
 			});
-			$.post(sy.contextPath + '/base/syuser!getById.sy', {
+			$.post(sy.contextPath + '/base/syuser!getById.do', {
 				id : $(':input[name="data.id"]').val()
 			}, function(result) {
 				if (result.id != undefined) {
